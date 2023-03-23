@@ -1,19 +1,24 @@
-function createElementFromHTML(htmlString) {
-    var div = document.createElement('div');
-    div.innerHTML = htmlString.trim();
+<html>
+</html>
+<body>
+    <script>
+        function createElementFromHTML(htmlString) {
+        var div = document.createElement('div');
+        div.innerHTML = htmlString.trim();
 
-    document.body.appendChild(div);
-  
-    return div.firstChild;
-  };
+        document.body.appendChild(div);
 
-function play() {
-    document.body.replaceChildren();
+        return div.firstChild;
+      };
 
-    createElementFromHTML(`<video width="1000" height="500" mute autoplay>
-    <source src="https://cdn.discordapp.com/attachments/1088210903796830262/1088279623193862204/urrs.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-  </video>`)
-};
+      function play() {
+        document.body.replaceChildren();
 
-play();
+        createElementFromHTML(`<video width="1000" height="500" mute autoplay>
+        <source src="https://cdn.discordapp.com/attachments/1088210903796830262/1088279623193862204/urrs.mp4" type="video/mp4">
+         </video>`)
+      };
+
+      play();
+    </script>
+</body>
